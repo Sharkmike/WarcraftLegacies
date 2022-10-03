@@ -23,6 +23,7 @@ namespace AzerothWarsCSharp.Launcher
     private const string AssetsFolderPath = @"..\..\..\..\Assets\";
     private const string BaseMapPath = @"..\..\..\..\..\maps\source.w3x";
     private const string TestMapPath = @"..\..\..\..\..\maps\testsource.w3x";
+    private const string MapDataPath = @"C:\Users\zakar\OneDrive\Documents\temp\ObjectData";
 
     // Output
     private const string OutputFolderPath = @"..\..\..\..\..\artifacts";
@@ -44,9 +45,10 @@ namespace AzerothWarsCSharp.Launcher
     {
       Console.WriteLine("The following actions are available:");
       Console.WriteLine("1. Generate constants");
-      Console.WriteLine("2. Compile map");
-      Console.WriteLine("3. Compile and run map");
+      Console.WriteLine("2. Compile Warcraft Legacies");
+      Console.WriteLine("3. Compile and run Warcraft Legacies");
       Console.WriteLine("4. Compile and run test map");
+      Console.WriteLine("5. Serialize Warcraft Legacies");
 
       IConfiguration config = new ConfigurationBuilder()
         .AddJsonFile("appsettings.json")
@@ -77,6 +79,9 @@ namespace AzerothWarsCSharp.Launcher
           break;
         case ConsoleKey.D4:
           Build(TestMapPath, TestSourceCodeProjectFolderPath, true, config);
+          break;
+        case ConsoleKey.D5:
+          SerializeToDirectory(BaseMapPath, MapDataPath);
           break;
         default:
           Console.WriteLine($"{Environment.NewLine}Invalid input. Please choose again.");
@@ -171,8 +176,16 @@ namespace AzerothWarsCSharp.Launcher
           i++;
         }
       }
+      
+      
     }
 
+    private static void SerializeToDirectory(string baseMapPath, string outputDirectoryPath)
+    {
+      var map = Map.Open(baseMapPath);
+      MapSerializer.Serialize(map, @"C:\Users\zakar\OneDrive\Documents\temp\");
+    }
+    
     private static void LaunchGame(LaunchSettings launchSettings)
     {
       var wc3Exe = launchSettings.Warcraft3ExecutablePath;
