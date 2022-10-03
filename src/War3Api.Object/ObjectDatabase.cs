@@ -114,10 +114,10 @@ namespace War3Api.Object
                 AddObjects(objectData.ItemData);
             }
 
-            //if (objectData.DestructableData is not null)
-            //{
-            //    AddObjects(objectData.DestructableData);
-            //}
+            if (objectData.DestructableData is not null)
+            {
+                AddObjects(objectData.DestructableData);
+            }
 
             if (objectData.DoodadData is not null)
             {

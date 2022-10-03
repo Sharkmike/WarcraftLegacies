@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Text.Json;
 using War3Net.Build;
 
@@ -28,15 +27,8 @@ namespace AzerothWarsCSharp.Launcher
 
     private static void Write(string folderPath, string fileName, object objectToWrite, JsonSerializerOptions options)
     {
-      try
-      {
-        var json = JsonSerializer.Serialize(objectToWrite, options);
-        File.WriteAllText(Path.Join(folderPath, fileName), json);
-      }
-      catch
-      {
-        Console.WriteLine($"Warning: failed to serialize {fileName}");
-      }
+      var json = JsonSerializer.Serialize(objectToWrite, options);
+      File.WriteAllText(Path.Join(folderPath, fileName), json);
     }
 
     public static void Serialize(Map map, string folderPath)
