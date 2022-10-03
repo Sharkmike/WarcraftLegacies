@@ -23,7 +23,7 @@ namespace AzerothWarsCSharp.Launcher
     private const string AssetsFolderPath = @"..\..\..\..\Assets\";
     private const string BaseMapPath = @"..\..\..\..\..\maps\source.w3x";
     private const string TestMapPath = @"..\..\..\..\..\maps\testsource.w3x";
-    private const string MapDataPath = @"C:\Users\zakar\OneDrive\Documents\temp\ObjectData";
+    private const string MapDataPath = @"..\..\..\..\..\json\";
 
     // Output
     private const string OutputFolderPath = @"..\..\..\..\..\artifacts";
@@ -183,7 +183,7 @@ namespace AzerothWarsCSharp.Launcher
     private static void SerializeToDirectory(string baseMapPath, string outputDirectoryPath)
     {
       var map = Map.Open(baseMapPath);
-      MapSerializer.Serialize(map, @"C:\Users\zakar\OneDrive\Documents\temp\");
+      MapSerializer.Serialize(map, outputDirectoryPath);
     }
     
     private static void LaunchGame(LaunchSettings launchSettings)
