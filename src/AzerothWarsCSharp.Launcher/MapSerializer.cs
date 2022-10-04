@@ -36,7 +36,7 @@ namespace AzerothWarsCSharp.Launcher
       var options = new JsonSerializerOptions { WriteIndented = true };
       Write(folderPath, UnitsPath, map.Units, options);
       Write(folderPath, DoodadsPath, map.Doodads, options);
-      Write(folderPath, UnitObjectDataPath, map.UnitObjectData, options);
+      //Write(folderPath, UnitObjectDataPath, map.UnitObjectData, options);
       Write(folderPath, DoodadObjectDataPath, map.DoodadObjectData, options);
       Write(folderPath, CamerasPath, map.Cameras, options);
       Write(folderPath, EnvironmentPath, map.Environment, options);

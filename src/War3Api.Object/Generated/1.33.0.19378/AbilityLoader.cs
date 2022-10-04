@@ -35186,26 +35186,6 @@ namespace War3Api.Object
             ability.StatsEffectsRaw[2] = null;
             ability.StatsEffectsRaw[3] = null;
             ability.StatsEffectsRaw[4] = null;
-            ability.DataPreferHostilesRaw[1] = 0;
-            ability.DataPreferHostilesRaw[2] = 0;
-            ability.DataPreferHostilesRaw[3] = 0;
-            ability.DataPreferHostilesRaw[4] = 0;
-            ability.DataPreferFriendliesRaw[1] = 0;
-            ability.DataPreferFriendliesRaw[2] = 0;
-            ability.DataPreferFriendliesRaw[3] = 0;
-            ability.DataPreferFriendliesRaw[4] = 0;
-            ability.DataMaxUnits[1] = 0;
-            ability.DataMaxUnits[2] = 0;
-            ability.DataMaxUnits[3] = 0;
-            ability.DataMaxUnits[4] = 0;
-            ability.DataAttackSpeedBonus[1] = 0.5f;
-            ability.DataAttackSpeedBonus[2] = 0f;
-            ability.DataAttackSpeedBonus[3] = 0f;
-            ability.DataAttackSpeedBonus[4] = 0f;
-            ability.DataDamagePerSecond[1] = 3f;
-            ability.DataDamagePerSecond[2] = 0f;
-            ability.DataDamagePerSecond[3] = 0f;
-            ability.DataDamagePerSecond[4] = 0f;
             ability.DataRequiresUndeadTargetRaw[1] = 1;
             ability.DataRequiresUndeadTargetRaw[2] = 0;
             ability.DataRequiresUndeadTargetRaw[3] = 0;
@@ -51244,14 +51224,6 @@ namespace War3Api.Object
             ability.StatsEffectsRaw[2] = null;
             ability.StatsEffectsRaw[3] = null;
             ability.StatsEffectsRaw[4] = null;
-            ability.DataDamageBonus[1] = 7f;
-            ability.DataDamageBonus[2] = 0f;
-            ability.DataDamageBonus[3] = 0f;
-            ability.DataDamageBonus[4] = 0f;
-            ability.DataEnabledAttackIndex[1] = 2;
-            ability.DataEnabledAttackIndex[2] = 0;
-            ability.DataEnabledAttackIndex[3] = 0;
-            ability.DataEnabledAttackIndex[4] = 0;
             ability.DataHealingMultiplier[1] = 0.65f;
             ability.DataHealingMultiplier[2] = 0f;
             ability.DataHealingMultiplier[3] = 0f;
@@ -52574,10 +52546,10 @@ namespace War3Api.Object
             ability.StatsEffectsRaw[2] = null;
             ability.StatsEffectsRaw[3] = null;
             ability.StatsEffectsRaw[4] = null;
-            ability.DataAOEDamageRaw[1] = 0;
-            ability.DataAOEDamageRaw[2] = 0;
-            ability.DataAOEDamageRaw[3] = 0;
-            ability.DataAOEDamageRaw[4] = 0;
+            ability.DataInitiallyEnabledRaw[1] = 0;
+            ability.DataInitiallyEnabledRaw[2] = 0;
+            ability.DataInitiallyEnabledRaw[3] = 0;
+            ability.DataInitiallyEnabledRaw[4] = 0;
             return ability;
         }
 

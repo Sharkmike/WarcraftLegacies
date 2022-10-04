@@ -171,8 +171,8 @@ namespace War3Api.Object.Enums
         WideWoodenBridge_LT10 = 808539212,
         /// <summary>Wide wooden bridge ('LT11').</summary>
         WideWoodenBridge_LT11 = 825316428,
-        /// <summary>Building ('XTbd').</summary>
-        Building = 1684165720,
+        /// <summary>Dalaran building ('XTbd').</summary>
+        DalaranBuilding = 1684165720,
         /// <summary>Dalaran violet citadel ('XTvt').</summary>
         DalaranVioletCitadel = 1953911896,
         /// <summary>Stone ramp ('LTr1').</summary>

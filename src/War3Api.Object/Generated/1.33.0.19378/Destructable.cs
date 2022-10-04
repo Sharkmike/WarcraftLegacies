@@ -426,6 +426,19 @@ namespace War3Api.Object
             set => SoundDeathRaw = value.ToRaw(null, null);
         }
 
+        public string SoundLoopingSoundRaw
+        {
+            get => _modifications.GetModification(1684960098).ValueAsString;
+            set => _modifications[1684960098] = new SimpleObjectDataModification{Id = 1684960098, Type = ObjectDataType.String, Value = value};
+        }
+
+        public bool IsSoundLoopingSoundModified => _modifications.ContainsKey(1684960098);
+        public string SoundLoopingSound
+        {
+            get => SoundLoopingSoundRaw.ToString(this);
+            set => SoundLoopingSoundRaw = value.ToRaw(null, null);
+        }
+
         public string ArtShadowRaw
         {
             get => _modifications.GetModification(1684566882).ValueAsString;
