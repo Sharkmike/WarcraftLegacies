@@ -36,7 +36,7 @@ namespace AzerothWarsCSharp.Launcher
 #if DEBUG
     private const bool Debug = true;
 #else
-		private const bool Debug = false;
+    private const bool Debug = false;
 #endif
 
     /// <summary>
@@ -55,7 +55,7 @@ namespace AzerothWarsCSharp.Launcher
       IConfiguration config = new ConfigurationBuilder()
         .AddJsonFile("appsettings.json")
         .Build();
-      
+
       MakeDecision(config);
     }
 
@@ -154,7 +154,7 @@ namespace AzerothWarsCSharp.Launcher
       };
 
       builder.Build(Path.Combine(OutputFolderPath, OutputMapName), archiveCreateOptions);
-      if (launch) 
+      if (launch)
         LaunchGame(launchSettings);
     }
 
@@ -181,8 +181,6 @@ namespace AzerothWarsCSharp.Launcher
           i++;
         }
       }
-      
-      
     }
 
     private static void SerializeToDirectory(string baseMapPath, string outputDirectoryPath)
@@ -190,7 +188,7 @@ namespace AzerothWarsCSharp.Launcher
       var map = Map.Open(baseMapPath);
       MapSerializer.ExportToJson(map, outputDirectoryPath);
     }
-    
+
     private static void LaunchGame(LaunchSettings launchSettings)
     {
       var wc3Exe = launchSettings.Warcraft3ExecutablePath;
