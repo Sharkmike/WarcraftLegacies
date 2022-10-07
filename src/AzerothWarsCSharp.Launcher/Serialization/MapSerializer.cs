@@ -34,7 +34,7 @@ namespace AzerothWarsCSharp.Launcher.Serialization
     /// <summary>
     /// Reads all .json files in the input folder path and creates a Warcraft 3 map file at the specified file path.
     /// </summary>
-    public static void ExportToW3X(string inputFolderPath, string outputFilePath)
+    public static void ExportToW3X(string inputFolderPath, string outputFilePath, string assetsPath)
     {
       var map = new Map
       {
@@ -65,6 +65,7 @@ namespace AzerothWarsCSharp.Launcher.Serialization
       };
       
       var mapBuilder = new MapBuilder(map);
+      mapBuilder.AddFiles(assetsPath, "*", SearchOption.AllDirectories);
       mapBuilder.Build(outputFilePath, archiveCreateOptions);
     }
     
