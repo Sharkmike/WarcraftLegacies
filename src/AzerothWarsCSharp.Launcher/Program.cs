@@ -86,7 +86,7 @@ namespace AzerothWarsCSharp.Launcher
           SerializeToDirectory(BaseMapPath, MapDataPath);
           break;
         case ConsoleKey.D6:
-          MapSerializer.ExportToW3X(MapDataPath, "WarcraftLegacies.w3x");
+          MapSerializer.ExportToW3X(MapDataPath, @"..\..\..\..\..\WarcraftLegacies.w3x");
           break;
         default:
           Console.WriteLine($"{Environment.NewLine}Invalid input. Please choose again.");
