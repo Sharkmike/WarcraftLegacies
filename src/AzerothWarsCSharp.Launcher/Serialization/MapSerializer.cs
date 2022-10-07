@@ -2,7 +2,7 @@
 using System.Text.Json;
 using War3Net.Build;
 
-namespace AzerothWarsCSharp.Launcher
+namespace AzerothWarsCSharp.Launcher.Serialization
 {
   public static class MapSerializer
   {
@@ -24,7 +24,7 @@ namespace AzerothWarsCSharp.Launcher
     private const string DestructableObjectDataPath = "ObjectData/Destructables.json";
     private const string ItemObjectDataPath = "ObjectData/Items.json";
     private const string UpgradeObjectDataPath = "ObjectData/Upgrades.json";
-
+    
     private static void Write(string folderPath, string fileName, object objectToWrite, JsonSerializerOptions options)
     {
       var json = JsonSerializer.Serialize(objectToWrite, options);
@@ -33,10 +33,10 @@ namespace AzerothWarsCSharp.Launcher
 
     public static void Serialize(Map map, string folderPath)
     {
-      var options = new JsonSerializerOptions { WriteIndented = true };
+      var options = new JsonSerializerOptions { WriteIndented = true, IgnoreReadOnlyProperties = true};
       Write(folderPath, UnitsPath, map.Units, options);
       Write(folderPath, DoodadsPath, map.Doodads, options);
-      //Write(folderPath, UnitObjectDataPath, map.UnitObjectData, options);
+      Write(folderPath, UnitObjectDataPath, map.UnitObjectData, options);
       Write(folderPath, DoodadObjectDataPath, map.DoodadObjectData, options);
       Write(folderPath, CamerasPath, map.Cameras, options);
       Write(folderPath, EnvironmentPath, map.Environment, options);

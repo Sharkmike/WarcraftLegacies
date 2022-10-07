@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using AzerothWarsCSharp.Launcher.Serialization;
 using CSharpLua;
 using Microsoft.CodeAnalysis;
 using Microsoft.Extensions.Configuration;
