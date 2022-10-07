@@ -49,7 +49,8 @@ namespace AzerothWarsCSharp.Launcher
       Console.WriteLine("2. Compile Warcraft Legacies");
       Console.WriteLine("3. Compile and run Warcraft Legacies");
       Console.WriteLine("4. Compile and run test map");
-      Console.WriteLine("5. Serialize Warcraft Legacies");
+      Console.WriteLine("5. Export Warcraft Legacies to .json");
+      Console.WriteLine("6. Export Warcraft Legacies to .w3x");
 
       IConfiguration config = new ConfigurationBuilder()
         .AddJsonFile("appsettings.json")
@@ -83,6 +84,9 @@ namespace AzerothWarsCSharp.Launcher
           break;
         case ConsoleKey.D5:
           SerializeToDirectory(BaseMapPath, MapDataPath);
+          break;
+        case ConsoleKey.D6:
+          MapSerializer.ExportToW3X(MapDataPath, "WarcraftLegacies.w3x");
           break;
         default:
           Console.WriteLine($"{Environment.NewLine}Invalid input. Please choose again.");
@@ -184,7 +188,7 @@ namespace AzerothWarsCSharp.Launcher
     private static void SerializeToDirectory(string baseMapPath, string outputDirectoryPath)
     {
       var map = Map.Open(baseMapPath);
-      MapSerializer.Serialize(map, outputDirectoryPath);
+      MapSerializer.ExportToJson(map, outputDirectoryPath);
     }
     
     private static void LaunchGame(LaunchSettings launchSettings)
